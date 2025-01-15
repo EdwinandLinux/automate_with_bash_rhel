@@ -38,3 +38,15 @@ delete_user() {
     fi
 
 }
+
+# Function to delete a group
+delete_group() {
+    read -p "Enter the group name to delete" DEL_GROUP_NAME
+    sudo groupdel "$DEL_GROUP_NAME"
+    # Check if the group name was deleted
+    if [ $? -eq 0 ]; then 
+        echo "Group Name:$DEL_GROUP_NAME was successfully deleted."
+    else
+        echo "Group Name:$DEL_GROUP_NAME was not successfully deleted."
+    fi
+}
