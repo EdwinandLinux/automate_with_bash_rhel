@@ -56,3 +56,9 @@ list_users() {
     echo "List all users"
     cut -d: -f1 /etc/passwd
 }
+
+# Function to list groups
+list_groups() {
+    echo "List all groups"
+    cud -d: -f1 /etc/group
+}
