@@ -62,3 +62,29 @@ list_groups() {
     echo "List all groups"
     cud -d: -f1 /etc/group
 }
+
+# Menu
+while true; do 
+    echo " Choose an option from the Menu...."
+    echo "1. Add User"
+    echo "2. Add Group"
+    echo "3. Delete User"
+    echo "4. Delete Group"
+    echo "5. List Users"
+    echo "6. List Groups"
+    echo "7. Exit"
+    read -p "Enter your choice between 1-7" choice
+    case $choice in 
+         1) add_user ;;
+         2) add_group ;;
+         3) delete_user ;;
+         4) delete_group ;;
+         5) list_users ;;
+         6) list_groups ;;
+         7) echo "Existing...."; 
+         break;;
+         *) echo "Invalid choice, please try again" ;;
+         esac
+         echo
+         done
+
