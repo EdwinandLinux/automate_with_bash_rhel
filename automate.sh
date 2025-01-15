@@ -13,3 +13,15 @@ add_user() {
         echo "User : $USERNAME was not successfully  added."
     fi
 }
+
+# Function to add a group
+add_group() {
+    read -p "Enter the group name: " GROUP_NAME
+    sudo groupadd "$GROUP_NAME"
+    # Check if the group name was created
+    if [$? -eq 0 ]; then
+        echo "Group Name: $GROUP_NAME was successfully created."
+    else
+        echo "Group Name: $GROUP_NAME was not successfully created."
+    fi
+}
