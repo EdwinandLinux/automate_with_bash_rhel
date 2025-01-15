@@ -50,3 +50,9 @@ delete_group() {
         echo "Group Name:$DEL_GROUP_NAME was not successfully deleted."
     fi
 }
+
+# Function to list users
+list_users() {
+    echo "List all users"
+    cut -d: -f1 /etc/passwd
+}
