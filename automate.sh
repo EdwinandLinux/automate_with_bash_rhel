@@ -19,9 +19,22 @@ add_group() {
     read -p "Enter the group name: " GROUP_NAME
     sudo groupadd "$GROUP_NAME"
     # Check if the group name was created
-    if [$? -eq 0 ]; then
+    if [ $? -eq 0 ]; then
         echo "Group Name: $GROUP_NAME was successfully created."
     else
         echo "Group Name: $GROUP_NAME was not successfully created."
     fi
+}
+
+# Function to delete a user
+delete_user() {
+    read -p "Enter the nmae of the user to delete: " DEL_USER
+    sudo userdel "$DEL_USER"
+    # Check if the user was deleted
+    if [ $? -eq 0 ]; then
+        echo " User: $DEL_USER was successfully deleted."
+    else
+        echo "User: $DEL_USER was not successfully deleted."
+    fi
+
 }
